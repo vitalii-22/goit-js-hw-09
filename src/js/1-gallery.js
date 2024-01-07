@@ -1,4 +1,3 @@
-import simpleLightbox from 'simplelightbox';
 import SimpleLightbox from 'simplelightbox';
 
 const images = [

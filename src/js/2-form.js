@@ -22,8 +22,8 @@ function formSubmit(e) {
 }
 
 function formInput(e) {
-  const inputMessage = e.currentTarget.elements.email.value;
-  const textareaMessage = e.currentTarget.elements.message.value;
+  const inputMessage = e.currentTarget.elements.email.value.trim();
+  const textareaMessage = e.currentTarget.elements.message.value.trim();
 
   localStorage.setItem(
     storageKey,
@@ -37,10 +37,11 @@ function formInput(e) {
 function valueLocalStorage() {
   const savedMessage = localStorage.getItem(storageKey);
 
-  const parsetMessage = JSON.parse(savedMessage);
+  if (savedMessage) {
+    const parsetMessage = JSON.parse(savedMessage);
 
-  const { email, message } = parsetMessage;
-
-  if (email && message) textarea.value = message;
-  input.value = email;
+    const { email, message } = parsetMessage;
+    textarea.value = message;
+    input.value = email;
+  }
 }
