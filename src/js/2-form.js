@@ -36,10 +36,9 @@ function formInput(e) {
 
 function valueLocalStorage() {
   const savedMessage = localStorage.getItem(storageKey);
+  const parsetMessage = JSON.parse(savedMessage);
 
-  if (savedMessage) {
-    const parsetMessage = JSON.parse(savedMessage);
-
+  if (parsetMessage) {
     const { email, message } = parsetMessage;
     textarea.value = message;
     input.value = email;
