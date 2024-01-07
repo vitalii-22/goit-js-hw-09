@@ -121,6 +121,12 @@ button:hover {
   background: #6c8cff;
 }
 
+.link {
+  display: flex;
+  row-gap: 16px;
+  font-size: 20px;
+}
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
